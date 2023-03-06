@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 main() {
-	local machine_arch=$(arch)
+	local machine_arch=$(uname -m)
 	for arch in x86_64 arm64; do
 		mkdir -p $arch
 		cc -c -Wall -arch $arch -o ./$arch/lib.o lib.c
